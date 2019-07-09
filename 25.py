@@ -1,0 +1,5 @@
+n=int(input())
+k=list(map(int,input().split()))
+k.sort()
+s=int(n/2)
+print(k[s])
