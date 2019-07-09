@@ -1,3 +1,3 @@
-n=int(input())
+q=int(input())
 k=list(map(int,input().split()))
 print(min(k))
