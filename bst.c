@@ -21,7 +21,7 @@ struct node* insert(struct node* root, int data)
     if (data < root->data)
         root->left  = insert(root->left, data);
     else if (data > root->data)
-        root->right = insert(root->right, data);   
+        root->right = insert(root->right, data); 
  
     return root;
 }
@@ -30,6 +30,24 @@ void inorder(struct node* root){
     inorder(root->left);
     printf("%d ->", root->data);
     inorder(root->right);
+}
+void smallest(struct node *root)
+{
+
+    while(root != NULL && root->left != NULL)
+    {
+        root = root->left;
+    }
+    printf("%d \n",root->data);
+}
+void largest(struct node *root)
+{
+
+    while(root != NULL && root->right != NULL)
+    {
+        root = root->right;
+    }
+    printf("%d \n",root->data);
 }
 int main(){
     struct node* root=NULL;
@@ -42,6 +60,8 @@ int main(){
     insert(root, 14);
     insert(root, 4);
     inorder(root);
+    smallest(root);
+    largest(root);
 }
 
 
